@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Sorter {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub3
 		int[] test1 = { 1, 4, 4, 5, 2, 4, 3, 17, 0 };
 		double[] test2 = { 1.1, 4.1, 4.2, 5.0, 2.0, 4.0, 3.0, 17.0, 0.0 };
 		String[] test3 = { "zebra", "tortilla", "abba", "foo", "bar", "aba" };
@@ -43,21 +43,25 @@ public class Sorter {
 			int j = i; //Initialize j = to the count
 			while (j > 0 && list1[j - 1] > x) //Condition in which swap takes place
 			{
-				SwapInt(list1, j-1, j);
-				j--;
+				SwapInt(list1, j-1, j);//Swap method
+				j--;//goes through the list to compare the other numbers to swap
 			}
-			list1[j] = x;
+			list1[j] = x; //sets x as next element
 		}
 	}
 
 	public static void SelectionSort(double[] list1) {
 		// Reference:https://www.javatpoint.com/selection-sort-in-java
-		for (int i = 0; i < list1.length - 1; i++) {
-			int minindex = i;
-			for (int j = i + 1; j < list1.length; j++) {
-				if (list1[minindex] > list1[j]) {
-					minindex = j;
-					SwapDouble(list1, i, j);
+		for (int i = 0; i < list1.length - 1; i++)// loop to go through the array
+		{
+			int index = i; //initialize i as the  index
+			for (int j = i + 1; j < list1.length; j++)// loop for the second element
+			{
+				//finds lowest # and puts in it's place
+				if (list1[index] > list1[j]) 
+				{
+					index = j; //looks for lowest index
+					SwapDouble(list1, i, j); //swap method
 				}
 			}
 		}
@@ -65,11 +69,14 @@ public class Sorter {
 
 	public static void BubbleSort(String[] list1) { 
 		// Reference:https://www.geeksforgeeks.org/bubble-sort/
-		for (int i = 0; i < list1.length; i++) {
-
-			for (int j = i + 1; j < list1.length; j++) {
-				if (list1[i].compareTo(list1[j]) > 0) {
-					SwapString(list1, i, j);
+		for (int i = 0; i < list1.length; i++) //loop to go through left number
+	{
+			for (int j = i + 1; j < list1.length; j++) //loop to go through right number
+			{
+				if (list1[i].compareTo(list1[j]) > 0) //checks to see if a swap is needed
+				{
+					SwapString(list1, i, j); //swap method
+					
 				}
 			}
 		}
@@ -94,3 +101,4 @@ public class Sorter {
 	}
 
 }
+
